@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top left, #2b164d, #0d1e2e);
+    color: white;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #b48fff;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+main {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-grid {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.row-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.box-group {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1rem;
+    flex: 1;
+    min-width: 220px;
+    justify-content: space-between;
+}
+
+.box-title {
+    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+    display: inline-block;
+}
+
+.box-content {
+    margin: 0.2rem 0;
+    padding-left: 1rem;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    gap: 1rem;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.box-content button {
+    margin-right: 0.4rem;
+    margin-bottom: 0.5rem;
+    align-items: center;
+}
+
+
+.sidebar {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.purple {
+    background: #9b59b6;
+}
+
+.teal {
+    background: #1abc9c;
+}
+
+.cyan {
+    background: #00bcd4;
+}
+
+.blue {
+    background: #2196f3;
+}

@@ -1,4 +1,4 @@
-.rfp-modal-backdrop {
+/* .rfp-modal-backdrop {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
@@ -36,5 +36,32 @@
   .modal-buttons {
     display: flex;
     justify-content: space-between;
+  }
+   */
+
+
+   .rfp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .rfp-table th, .rfp-table td {
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    text-align: left;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    cursor: pointer;
   }
   

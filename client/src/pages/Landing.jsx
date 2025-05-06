@@ -10,14 +10,21 @@ const Landing = () => {
 
   const handleButtonClick = async (category) => {
     try {
-      const res = await axios.get(`http://localhost:5000/rfp/v1/${category}`)
+      const res = await axios.get(`http://localhost:3000/rfp/v1?category=${encodeURIComponent(category)}`)
+      console.log(res)
       setModalTitle(`${category} RFP Questions`)
+      console.log(res.data)
+      console.log(typeof res.data.content)
       setModalContent(res.data.content)
       setModalVisible(true)
     } catch (err) {
-      setModalTitle('Error')
-      setModalContent('Failed to load data.')
+      // setModalTitle('Error')
+      // setModalContent('Failed to load data.')
+      // setModalVisible(true)
+      setModalTitle(`${category} RFP Questions`)
+      setModalContent(res.data.questions)  // ✅ Correct key
       setModalVisible(true)
+
     }
   };
 
@@ -53,7 +60,7 @@ const Landing = () => {
                 <button onClick={() => handleButtonClick("SAST")}>SAST</button>
               </div>
               <div className="box-content">
-                <button onClick={() => handleButtonClick("API security")}>API security</button>
+                <button onClick={() => handleButtonClick("API")}>API security</button>
               </div>
               <div className="box-content">
                 <button onClick={() => handleButtonClick("DAST")}>DAST</button>
@@ -66,26 +73,26 @@ const Landing = () => {
                 <button onClick={() => handleButtonClick("SCA")}>SCA</button>
               </div>
               <div className="box-content">
-                <button onClick={() => handleButtonClick("Malicious Packages")}>Malicious Packages</button>
+                <button onClick={() => handleButtonClick("Malicious")}>Malicious Packages</button>
               </div>
               <div className="box-content">
-                <button onClick={() => handleButtonClick("Secret Detection")}>Secret Detection</button>
+                <button onClick={() => handleButtonClick("Secret")}>Secret Detection</button>
               </div>
               <div className="box-content">
-                <button onClick={() => handleButtonClick("Repository Health")}>Repository Health</button>
+                <button onClick={() => handleButtonClick("Repository")}>Repository Health</button>
               </div>
               <div className="box-content">
-                <button onClick={() => handleButtonClick("AI Security")}>AI Security</button>
+                <button onClick={() => handleButtonClick("AI")}>AI Security</button>
               </div>
             </section>
 
             <section className="box-group">
               <div className="box-title purple">Cloud</div>
               <div className="box-content">
-                <button onClick={() => handleButtonClick("Container Security")}>Container Security</button>
+                <button onClick={() => handleButtonClick("Container")}>Container Security</button>
               </div>
               <div className="box-content">
-                <button onClick={() => handleButtonClick("IaC Security")}>IaC Security</button>
+                <button onClick={() => handleButtonClick("IaC")}>IaC Security</button>
               </div>
             </section>
 

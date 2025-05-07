@@ -1,10 +1,10 @@
 import { fetchRfpQuestions } from '../services/excel_service.js';
 
 export const getRfpBySection = async (req, res) => {
-  //const { section } = req.params;
   const { category } = req.query;
   if (!category) {
-    return res.status(400).json({ success: false, message: "Category query param is required." });
+    return res.status(400).json({ success: false, message: "Category query param is required." })
+    .setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
   }
 
   try {

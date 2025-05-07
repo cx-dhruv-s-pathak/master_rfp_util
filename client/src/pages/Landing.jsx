@@ -22,7 +22,7 @@ const Landing = () => {
       // setModalContent('Failed to load data.')
       // setModalVisible(true)
       setModalTitle(`${category} RFP Questions`)
-      setModalContent(res.data.questions)  // ✅ Correct key
+      setModalContent(res.data.questions)
       setModalVisible(true)
 
     }

@@ -3,17 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import router from './routes/first_order_routes.js';
 
+app.use(helmet.hidePoweredBy());  
 const app = express();
-app.use(helmet({
-  hidePoweredBy: true,
-  noSniff: true,
-  xssFilter: true,
-  hsts: {
-    maxAge: 31536000,
-    includeSubDomains: true,
-    preload: true
-  }
-}));  
 
 app.use(cors());
 app.use(express.json());

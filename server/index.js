@@ -1,20 +1,14 @@
+import helmet from 'helmet';
 import express from 'express';
 import cors from 'cors';
 import router from './routes/first_order_routes.js';
-import helmet from 'helmet';
 
+app.use(helmet.hidePoweredBy());  
 const app = express();
-app.use(helmet({
-    hidePoweredBy: true,
-    hsts: {
-      maxAge: 31536000, // 1 year
-      includeSubDomains: true,
-      preload: true,
-    },
-  }));  
 
 app.use(cors());
 app.use(express.json());
+app.disable('x-powered-by');
 
 app.use('/rfp', router);
 

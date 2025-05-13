@@ -1,8 +1,12 @@
 import express from 'express';
 import cors from 'cors';
 import router from './routes/first_order_routes.js';
+import helmet from 'helmet';
 
 const app = express();
+app.use(helmet());
+
+
 app.use(cors());
 app.use(express.json());
 

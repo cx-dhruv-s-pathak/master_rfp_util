@@ -5,7 +5,6 @@ import fs from 'fs';
 export const fetchRfpQuestions = (sectionName) => {
   const filePath = path.resolve('data', 'First_order_RFP.xlsx');
   if (!fs.existsSync(filePath)) throw new Error('Excel file not found');
-  console.log(sectionName);
 
   const workbook = XLSX.readFile(filePath, { type: 'file' });
   const sheet = workbook.Sheets[sectionName];

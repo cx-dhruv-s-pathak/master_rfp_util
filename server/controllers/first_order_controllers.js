@@ -11,7 +11,7 @@ export const getRfpBySection = async (req, res) => {
     res.setHeader("Strict-Transport-Security", "max-age=28800; includeSubDomains")
        .json({ success: true, category, questions });
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    res.status(500).json({ success: false, message: "An internal server error occurred" });
   }
 };
 

@@ -3,7 +3,7 @@ import { fetchRfpQuestions } from '../services/excel_service.js';
 export const getRfpBySection = async (req, res) => {
   const { category } = req.query;
   if (!category) {
-    return res.status(400).json({ success: false, message: "Category query param is required." })
+    return res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains").status(400).json({ success: false, message: "Category query param is required." })
   }
 
   try {
